@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom"; // which adds the wrapping fun
 import { AuthProvider } from './context/AuthContext.tsx';
 import { Toaster } from 'react-hot-toast'; // it is for the notification.
 import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:3000/api/v1";
+axios.defaults.baseURL = "https://meshai-gpt-backend.onrender.com/api/v1";
 axios.defaults.withCredentials = true; // it will allow setting cookies from the backend
 
 

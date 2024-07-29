@@ -37,7 +37,7 @@ export const userSignup = async (
 
                 res.clearCookie("auth_token", {
                     httpOnly: true,
-                    domain: "https://meshai-gpt.onrender.com",
+                    domain: "https://meshai-gpt-backend.onrender.com",
                     signed: true,
                     path: "/",
                 });
@@ -47,7 +47,7 @@ export const userSignup = async (
                 expires.setDate(expires.getDate() + 7);
                 res.cookie("auth_token", token, {
                     path: "/",
-                    domain: "https://meshai-gpt.onrender.com",
+                    domain: "https://meshai-gpt-backend.onrender.com",
                     expires,
                     httpOnly: true,
                     signed: true,
@@ -80,7 +80,7 @@ export const userLogin = async (
                 // create token and store cookie
                 res.clearCookie("auth_token", {
                     httpOnly: true,
-                    domain: "https://meshai-gpt.onrender.com",
+                    domain: "https://meshai-gpt-backend.onrender.com",
                     signed: true,
                     path: "/",
                 });
@@ -90,7 +90,7 @@ export const userLogin = async (
                 expires.setDate(expires.getDate() + 7);
                 res.cookie("auth_token", token, {
                     path: "/",
-                    domain: "https://meshai-gpt.onrender.com",
+                    domain: "https://meshai-gpt-backend.onrender.com",
                     expires,
                     httpOnly: true,
                     signed: true,
@@ -144,7 +144,7 @@ export const verifyUser = async (
       
           res.clearCookie("auth_token", {
             httpOnly: true,
-            domain: "https://meshai-gpt.onrender.com",
+            domain: "https://meshai-gpt-backend.onrender.com",
             signed: true,
             path: "/",
           });
