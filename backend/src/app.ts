@@ -21,6 +21,6 @@ app.use(cookieParser(process.env.COOKIE_SECRET)) //cookie parser is used to send
 //remove it in production.
 app.use(morgan("dev")); // to log all the details related to request.
 
-app.use("/api/v1", appRouter); //Once we move on to this endpoint /api/v1 then it will transferred to appRouter
+app.use("/", appRouter); //Once we move on to this endpoint /api/v1 then it will transferred to appRouter
 
 export default app;
