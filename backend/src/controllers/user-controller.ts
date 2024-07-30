@@ -41,6 +41,7 @@ export const userSignup = async (
                     secure: true,
                     signed: true,
                     path: "/",
+                    sameSite: "none",
                 });
             
                 const token = createToken(user._id.toString(), user.email, "7d");
@@ -53,6 +54,7 @@ export const userSignup = async (
                     httpOnly: true,
                     secure: true,
                     signed: true,
+                    sameSite: "none",
                 });
 
 
@@ -86,6 +88,7 @@ export const userLogin = async (
                     signed: true,
                     path: "/",
                     secure: true,
+                    sameSite: "none",
                 });
 
                 const token = createToken(user._id.toString(), user.email, "7d");
@@ -98,6 +101,7 @@ export const userLogin = async (
                     httpOnly: true,
                     signed: true,
                     secure: true,
+                    sameSite: "none",
                 });
 
                     return res.status(200).json({message: "OK", name: user.name, email: user.email});
@@ -152,6 +156,7 @@ export const verifyUser = async (
             signed: true,
             path: "/",
             secure: true,
+            sameSite: "none",
           });
       
           return res

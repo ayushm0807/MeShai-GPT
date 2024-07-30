@@ -9,7 +9,7 @@ const morgan = pkg;
 config(); // to connect database from dotenv files
 const app = express();
 //middlewares
-app.use(cors({ origin: "https://meshai-gpt.vercel.app/", credentials: true })); // this is to allow request sending from this server to backend.
+app.use(cors({ origin: "https://meshai-gpt.vercel.app", credentials: true })); // this is to allow request sending from this server to backend.
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET)); //cookie parser is used to send cookies from backend to frontend.
 //remove it in production.
