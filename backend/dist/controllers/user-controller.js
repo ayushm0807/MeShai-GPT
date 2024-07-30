@@ -29,6 +29,7 @@ export const userSignup = async (req, res, next) => {
             signed: true,
             path: "/",
             sameSite: "none",
+            partitioned: true,
         });
         const token = createToken(user._id.toString(), user.email, "7d");
         const expires = new Date();
@@ -41,6 +42,7 @@ export const userSignup = async (req, res, next) => {
             secure: true,
             signed: true,
             sameSite: "none",
+            partitioned: true,
         });
         return res.status(201).json({ message: "OK", name: user.name, email: user.email });
     }
@@ -68,6 +70,7 @@ export const userLogin = async (req, res, next) => {
             path: "/",
             secure: true,
             sameSite: "none",
+            partitioned: true,
         });
         const token = createToken(user._id.toString(), user.email, "7d");
         const expires = new Date();
@@ -80,6 +83,7 @@ export const userLogin = async (req, res, next) => {
             signed: true,
             secure: true,
             sameSite: "none",
+            partitioned: true,
         });
         return res.status(200).json({ message: "OK", name: user.name, email: user.email });
     }
@@ -124,6 +128,7 @@ export const userLogout = async (req, res, next) => {
             path: "/",
             secure: true,
             sameSite: "none",
+            partitioned: true,
         });
         return res
             .status(200)
