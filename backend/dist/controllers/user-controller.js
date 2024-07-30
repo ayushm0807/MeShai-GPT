@@ -24,7 +24,7 @@ export const userSignup = async (req, res, next) => {
         // create token and store cookie
         res.clearCookie("auth_token", {
             httpOnly: true,
-            domain: "meshai.linkpc.net",
+            domain: "meshai-gpt.vercel.app",
             secure: true,
             signed: true,
             path: "/",
@@ -34,7 +34,7 @@ export const userSignup = async (req, res, next) => {
         expires.setDate(expires.getDate() + 7);
         res.cookie("auth_token", token, {
             path: "/",
-            domain: "meshai.linkpc.net",
+            domain: "meshai-gpt.vercel.app",
             expires,
             httpOnly: true,
             secure: true,
@@ -61,7 +61,7 @@ export const userLogin = async (req, res, next) => {
         // create token and store cookie
         res.clearCookie("auth_token", {
             httpOnly: true,
-            domain: "meshai.linkpc.net",
+            domain: "meshai-gpt.vercel.app",
             signed: true,
             path: "/",
             secure: true,
@@ -71,7 +71,7 @@ export const userLogin = async (req, res, next) => {
         expires.setDate(expires.getDate() + 7);
         res.cookie("auth_token", token, {
             path: "/",
-            domain: "meshai.linkpc.net",
+            domain: "meshai-gpt.vercel.app",
             expires,
             httpOnly: true,
             signed: true,
@@ -115,7 +115,7 @@ export const userLogout = async (req, res, next) => {
         }
         res.clearCookie("auth_token", {
             httpOnly: true,
-            domain: "meshai.linkpc.net",
+            domain: "meshai-gpt.vercel.app",
             signed: true,
             path: "/",
             secure: true,
