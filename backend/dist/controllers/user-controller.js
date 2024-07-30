@@ -24,7 +24,8 @@ export const userSignup = async (req, res, next) => {
         // create token and store cookie
         res.clearCookie("auth_token", {
             httpOnly: true,
-            domain: "localhost",
+            domain: "meshai-gpt.onrender.com",
+            secure: true,
             signed: true,
             path: "/",
         });
@@ -33,9 +34,10 @@ export const userSignup = async (req, res, next) => {
         expires.setDate(expires.getDate() + 7);
         res.cookie("auth_token", token, {
             path: "/",
-            domain: "localhost",
+            domain: "meshai-gpt.onrender.com",
             expires,
             httpOnly: true,
+            secure: true,
             signed: true,
         });
         return res.status(201).json({ message: "OK", name: user.name, email: user.email });
@@ -59,19 +61,21 @@ export const userLogin = async (req, res, next) => {
         // create token and store cookie
         res.clearCookie("auth_token", {
             httpOnly: true,
-            domain: "localhost",
+            domain: "meshai-gpt.onrender.com",
             signed: true,
             path: "/",
+            secure: true,
         });
         const token = createToken(user._id.toString(), user.email, "7d");
         const expires = new Date();
         expires.setDate(expires.getDate() + 7);
         res.cookie("auth_token", token, {
             path: "/",
-            domain: "localhost",
+            domain: "meshai-gpt.onrender.com",
             expires,
             httpOnly: true,
             signed: true,
+            secure: true,
         });
         return res.status(200).json({ message: "OK", name: user.name, email: user.email });
     }
@@ -111,9 +115,10 @@ export const userLogout = async (req, res, next) => {
         }
         res.clearCookie("auth_token", {
             httpOnly: true,
-            domain: "localhost",
+            domain: "meshai-gpt.onrender.com",
             signed: true,
             path: "/",
+            secure: true,
         });
         return res
             .status(200)

@@ -37,7 +37,8 @@ export const userSignup = async (
 
                 res.clearCookie("auth_token", {
                     httpOnly: true,
-                    domain: "localhost",
+                    domain: "meshai-gpt.onrender.com",
+                    secure: true,
                     signed: true,
                     path: "/",
                 });
@@ -47,9 +48,10 @@ export const userSignup = async (
                 expires.setDate(expires.getDate() + 7);
                 res.cookie("auth_token", token, {
                     path: "/",
-                    domain: "localhost",
+                    domain: "meshai-gpt.onrender.com",
                     expires,
                     httpOnly: true,
+                    secure: true,
                     signed: true,
                 });
 
@@ -80,9 +82,10 @@ export const userLogin = async (
                 // create token and store cookie
                 res.clearCookie("auth_token", {
                     httpOnly: true,
-                    domain: "localhost",
+                    domain: "meshai-gpt.onrender.com",
                     signed: true,
                     path: "/",
+                    secure: true,
                 });
 
                 const token = createToken(user._id.toString(), user.email, "7d");
@@ -90,10 +93,11 @@ export const userLogin = async (
                 expires.setDate(expires.getDate() + 7);
                 res.cookie("auth_token", token, {
                     path: "/",
-                    domain: "localhost",
+                    domain: "meshai-gpt.onrender.com",
                     expires,
                     httpOnly: true,
                     signed: true,
+                    secure: true,
                 });
 
                     return res.status(200).json({message: "OK", name: user.name, email: user.email});
@@ -144,9 +148,10 @@ export const verifyUser = async (
       
           res.clearCookie("auth_token", {
             httpOnly: true,
-            domain: "localhost",
+            domain: "meshai-gpt.onrender.com",
             signed: true,
             path: "/",
+            secure: true,
           });
       
           return res
