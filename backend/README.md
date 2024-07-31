@@ -1,7 +1,7 @@
 
 # MERN Stack AI Chatbot
 
-This is an AI Chatbot application, Creafted using MERN Stack and Google Gemini.
+This is an AI Chatbot application, Crafted using MERN Stack and Google Gemini.
 
 It's a customized chatbot where each message of the user is stored in DB and can be retrieved and deleted.
 
