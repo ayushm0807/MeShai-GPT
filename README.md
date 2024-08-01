@@ -10,7 +10,7 @@
 
 * User interactions storage in a database
 * Options for retrieval and deletion
-*
+
 ## Security measures encompass:
 
 * JWT tokens
